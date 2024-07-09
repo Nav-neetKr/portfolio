@@ -3,7 +3,7 @@
     <img src="public/android-chrome-512x512.png" alt="Logo" width="100" height="100">
   </div>
   <h1 align="center">David's Lighthouse</h1>
-  <p>The <a href=""><ins></ins></a> is my portfolio website hosted on Netlify. It's fully responsive and accessible. You can toggle the <strong>light mode</strong> and <strong>dark mode</strong> with the slider. </p>
+  <p>The <a href="https://navneetsliet.netlify.app/"><ins>https://navneetsliet.netlify.app/</ins></a> is my portfolio website hosted on Netlify. It's fully responsive and accessible. You can toggle the <strong>light mode</strong> and <strong>dark mode</strong> with the slider. </p>
   <img src="public/images/work/portfolio.webp" alt="Portfolio hero page">
 </div>
 
