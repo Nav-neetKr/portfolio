@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        @apply font-inter;
+    }
+
+    :root {
+        --color-primary: 255 248 231;
+        --color-primary-monochrome: 245 239 224;
+        --color-secondary: 80 80 80;
+        --color-secondary-bg: 130 130 130;
+        --color-secondary-light: 120 120 120;
+        --color-accent: 246 92 53;
+        --color-accent-bg: 215 221 204;
+        --color-clock-blackground: 0 0 0;
+        --color-focus-outline: 86 19 209;
+    }
+
+    :root[theme='dark'] {
+        --color-primary: 66 52 48;
+        --color-primary-monochrome: 78 62 57;
+        --color-secondary: 228 210 209;
+        --color-secondary-bg: 151 137 136;
+        --color-secondary-light: 197 179 178;
+        --color-accent: 246 92 53;
+        --color-accent-bg: 49 57 75;
+        --color-clock-blackground: 0 0 0;
+        --color-focus-outline: 228 210 209;
+    }
+
+    a,
+    button,
+    input {
+        @apply outline-2 outline-focus-outline;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+        @apply outline;
+    }
+}
+
+@layer components {
+    .brightness-slider {
+        @apply h-full w-full cursor-col-resize appearance-none overflow-hidden rounded-full bg-clock-element;
+    }
+
+    .brightness-slider::-webkit-slider-thumb {
+        @apply h-[34px] w-[34px] appearance-none rounded-full bg-[#a14039] shadow-[-217px_0_0_200px_rgb(203,87,79)];
+    }
+
+    .brightness-slider::-moz-range-thumb {
+        @apply h-[34px] w-[34px] rounded-full border-none bg-[#a14039] shadow-[-217px_0_0_200px_rgb(203,87,79)];
+    }
+
+    .icon-link-md {
+        @apply h-5 w-5 cursor-pointer text-secondary-bg hover:text-secondary;
+    }
+
+    .icon-link-lg {
+        @apply icon-link-md h-8 w-8;
+    }
+
+    .clock-blackground-sm {
+        @apply rounded-[8px] bg-clock-element p-[4px] shadow-lg;
+    }
+
+    .clock-blackground-md {
+        @apply rounded-[8px] bg-clock-element p-[8px] shadow-lg;
+    }
+
+    .clock-list-xl {
+        @apply block h-[24px] overflow-hidden text-[24px] font-black leading-[24px];
+    }
+
+    .clock-list-sm {
+        @apply block h-[10px] overflow-hidden text-[10px] font-semibold leading-[10px];
+    }
+
+    .hidden-content {
+        @apply translate-y-[20px] opacity-0;
+    }
+
+    .revealed-content {
+        @apply translate-y-[0] opacity-100;
+    }
+
+    .life-list-img-wrapper {
+        @apply relative overflow-hidden rounded-[4px] outline-2 outline-offset-2 outline-focus-outline;
+    }
+
+    .life-list-img {
+        @apply h-full w-full object-cover transition-transform duration-700 ease-in-out;
+    }
+
+    .life-list-img-mask-bg {
+        @apply absolute left-0 top-0 h-full w-full bg-[#000000a2] opacity-0 transition-opacity duration-700 ease-in-out;
+    }
+
+    .life-list-img-mask-frame {
+        @apply pointer-events-none absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 opacity-0 outline outline-[2px] outline-white [transition:height_0.7s_ease-in-out,width_0.7s_ease-in-out,opacity_0.7s_ease-in-out];
+    }
+
+    .life-list-img-caption {
+        @apply pointer-events-none absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-[30%] scale-[1.01] text-center text-white opacity-0 transition-all duration-700 ease-in-out;
+    }
+
+    .section-list-item {
+        @apply mb-4 flex rounded-[8px] bg-primary-monochrome shadow-md last-of-type:mb-[4px];
+    }
+
+    .section-list-title {
+        @apply font-medium max-xl:text-sm max-mobile:text-base max-sm:text-sm;
+    }
+
+    .section-list-summary {
+        @apply mt-2 text-sm text-secondary-light;
+    }
+
+    .list-img-wrapper {
+        @apply flex-shrink-0 pr-4 max-[500px]:hidden;
+    }
+
+    .project-list-img {
+        @apply max-w-[100px] rounded-[4px] object-cover shadow-lg max-xl:max-w-[80px] max-mobile:max-w-[100px] max-sm:max-w-[80px];
+    }
+
+    .book-list-img {
+        @apply max-h-[70px] rounded-[4px] object-cover shadow-lg;
+    }
+
+    .testimonials-list-img {
+        @apply h-[70px] w-[70px] rounded-full object-cover shadow-lg;
+    }
+
+    .keypoint-list-item {
+        @apply mr-2 mt-2 inline-block rounded-[8px] bg-accent-bg pb-[4px] pl-[8px] pr-[8px] pt-[4px] text-sm font-medium text-secondary shadow;
+    }
+
+    .icons-list-item {
+        @apply absolute right-4 top-4;
+    }
+}
+
+.wheel {
+    animation-name: scaleUp;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.2s;
+    animation-delay: 5.7s;
+    scale: 0;
+}
+
+@keyframes scaleUp {
+    100% {
+        scale: 1;
+    }
+}
